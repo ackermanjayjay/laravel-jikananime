@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c491b8531eec05ba41a11d9276a5749",
+    "content-hash": "7812e7d01067f856482427fdf1cbb2ce",
     "packages": [
         {
             "name": "brick/math",
@@ -1044,6 +1044,45 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "jikan-me/jikan",
+            "version": "v1.15.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jikan-me/jikan.git",
+                "reference": "f74e4da0f60c943d979b90c2e6e06382addafdd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jikan-me/jikan/zipball/f74e4da0f60c943d979b90c2e6e06382addafdd5",
+                "reference": "f74e4da0f60c943d979b90c2e6e06382addafdd5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jikan\\": [
+                        "src"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Irfan",
+                    "email": "irfan@jikan.moe"
+                }
+            ],
+            "description": "Jikan is an unofficial MyAnimeList API",
+            "support": {
+                "issues": "https://github.com/jikan-me/jikan/issues",
+                "source": "https://github.com/jikan-me/jikan/tree/master"
+            },
+            "time": "2018-05-13T22:15:34+00:00"
         },
         {
             "name": "laravel/framework",

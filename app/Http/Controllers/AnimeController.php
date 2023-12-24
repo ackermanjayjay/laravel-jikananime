@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Http;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AnimeController extends Controller
 {
@@ -12,10 +13,10 @@ class AnimeController extends Controller
      */
     public function index()
     {
-        $response = Http::get("https://api.jikan.moe/v4/top/anime")['data'];
-        return view('Pages.index',[
-            'result'=>$response
-            ]);
+        $response = Http::get("https://api.jikan.moe/v4/top/anime?limit=8")['data'];
+        return view('Pages.index', [
+            'result' => $response
+        ]);
     }
 
     /**
@@ -37,14 +38,20 @@ class AnimeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $mal_id)
     {
-        $response = Http::get('https://api.jikan.moe/v4/anime/9253')['data'];
-        return view('Pages.detail',[
-            'result' =>$response,
-            ]);
+        
+        $response = Http::get("https://api.jikan.moe/v4/anime/$mal_id/full");
+        $result=$response->json("data");
+       // dd($result);
+        $sysnopsis =  Str::limit($result["synopsis"],200);
+        return view('Pages.detail', [
+            "result"=>$result,
+            'synopsis'=>$sysnopsis ]);
+
+
     }
- 
+
 
     /**
      * Show the form for editing the specified resource.

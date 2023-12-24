@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/", [AnimeController::class,"index"]);
-Route::get("/show/{id}", [AnimeController::class,"show"]);
+Route::get("/show/{mal_id}", [AnimeController::class,"show"]);
 /*
 Route::get('/', function () {
     return view('welcome');
