@@ -26,6 +26,16 @@ class AnimeController extends Controller
     {
         //
     }
+    public function search(Request $request)
+    {
+        //
+        $search = request('search');
+        $responsesearch = Http::get("https://api.jikan.moe/v4/anime?q=$search")['data'];
+        return view('Pages.index', [
+            'result' => $responsesearch
+        ]);
+
+    }
 
     /**
      * Store a newly created resource in storage.
