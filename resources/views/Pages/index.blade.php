@@ -4,11 +4,14 @@
         Popular Anime
     </h1>
     <div class="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mt-5 mx-5">
+            
+        {{-- <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{$items[0]}}</span> --}}
         @foreach ($result as $item)
             <div class="max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
+
                     <img class=" xl:w-96 h-96 md:w-70 h-70 w-30 h-30 rounded-t-lg object-cover"
-                        src={{ $item['images']['jpg']['image_url'] }} alt="" />
+                        src={{ $item['images']['jpg']['large_image_url'] }} alt="" />
                 </a>
                 <div class="p-5">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $item['title'] }}

@@ -15,7 +15,8 @@ class AnimeController extends Controller
     {
         $response = Http::get("https://api.jikan.moe/v4/top/anime?limit=8")['data'];
         return view('Pages.index', [
-            'result' => $response
+            'result' => $response,
+           
         ]);
     }
 
@@ -52,11 +53,12 @@ class AnimeController extends Controller
     {
         
         $response = Http::get("https://api.jikan.moe/v4/anime/$mal_id/full");
-        $result=$response->json("data");
-       // dd($result);
-        $sysnopsis =  Str::limit($result["synopsis"],200);
+        $result_detail=$response->json("data");
+        //dd($result_detail);
+      //  $sysnopsis =  Str::limit($result_detail["synopsis"],200);
+        $sysnopsis =  $result_detail["synopsis"];
         return view('Pages.detail', [
-            "result"=>$result,
+            "result"=>$result_detail,
             'synopsis'=>$sysnopsis ]);
 
 
